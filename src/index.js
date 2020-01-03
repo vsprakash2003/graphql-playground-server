@@ -43,7 +43,11 @@ const resolvers = {
 
         users:() => {
             return Object.values(users);
-        }
+        },
+    },
+
+    User: {
+        username: () => 'Sumathee'
     },
 };
 
