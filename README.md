@@ -29,3 +29,19 @@ merge pull request via GitHub online interface. select "squash and merge" in the
 git rebase origin/master
 perform the pull request steps from develop branch as detailed above to merge to master
 ```
+
+## PostgreSql and Sequalize setup
+### for setting up the PostgreSql DB
+`brew install PostgreSql`
+
+### check installed version
+`postgres --version`
+
+### initialize a DB if not already done
+`initdb /usr/local/var/postgres`
+the above command might throw an error if the DB was already initialized.
+
+### start and stop DB server
+`pg_ctl -D /usr/local/var/postgres start`
+
+`pg_ctl -D /usr/local/var/postgres stop`
