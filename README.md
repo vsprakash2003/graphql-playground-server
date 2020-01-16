@@ -45,3 +45,24 @@ the above command might throw an error if the DB was already initialized.
 `pg_ctl -D /usr/local/var/postgres start`
 
 `pg_ctl -D /usr/local/var/postgres stop`
+
+### create a database
+`createdb graphqlplaground`
+1. update environment variable with DB name
+   
+### list all databases
+`psql graphqlplaground`
+`\list`
+
+### create a super user with password
+`psql graphqlplayground`
+`CREATE ROLE userid WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'password';`
+1. update the environment variable with user and password
+
+### check list of users
+`psql graphqlplaground`
+`\du`
+
+### check tables after npm start
+`psql graphqlplaground`
+`select * from users;`
