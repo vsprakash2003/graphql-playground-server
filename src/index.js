@@ -48,6 +48,8 @@ sequelize.sync({force: eraseDatabaseOnSync}).then(async () => {
 const createUsersWithMessages = async () => {
     await models.User.create({
         username: 'vsprakash2003',
+        email: 'hello@prakash.com',
+        password: 'hello',
         messages: [
             {
             text: 'Check my git repositories',
@@ -61,6 +63,8 @@ const createUsersWithMessages = async () => {
 
     await models.User.create({
         username: 'anikap',
+        email: 'hello@anika.com',
+        password: 'hola',
         messages: [
             {
                 text: 'Check my work ....',

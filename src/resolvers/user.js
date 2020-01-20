@@ -1,3 +1,7 @@
+const createToken = async(user) => {
+
+}
+
 export default {
     Query: {
         me: async(parent, args, {models, me}) => {
@@ -24,5 +28,21 @@ export default {
                },
             });
        },
+    },
+
+    Mutation: {
+        signUp: async (
+            parent,
+            {username, email, password},
+            {models},
+        ) => {
+            const user = await models.User.create({
+                username,
+                email,
+                password,
+            });
+
+            return {token: createToken(user)};
+        },
     },
 };
