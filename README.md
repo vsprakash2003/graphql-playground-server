@@ -66,3 +66,7 @@ the above command might throw an error if the DB was already initialized.
 ### check tables after npm start
 `psql graphqlplaground`
 `select * from users;`
+
+## generate a random secret key and JWT token
+1. go to any password generator site and generate the secret key
+2. to generate a token, one can use `openssl rand 256 | base64`
