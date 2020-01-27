@@ -1,4 +1,7 @@
 import uuidv4 from "uuid/v4";
+import {ForbiddenError} from "apollo-server";
+import {combineResolvers} from "graphql-resolvers";
+import {isAuthenticated} from "./authorization";
 
 export default {
     Query: {
@@ -12,8 +15,10 @@ export default {
     },
 
     Mutation: {
-        createMessage: async(parent, {text}, {me, models}) => {
-            try{
+        createMessage: combineResolvers(
+            isAuthenticated,
+            async(parent, {text}, {me, models}) => {
+            try {
             return await models.Message.create({
                 text,
                 userId: me.id,
@@ -22,6 +27,7 @@ export default {
                 throw new Error(error)
             }
         },
+        ), 
 
         deleteMessage: async(parent, {id}, {models}) => {
             return await models.Message.destroy({where: {id}});
