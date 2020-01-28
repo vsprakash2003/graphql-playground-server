@@ -70,6 +70,7 @@ const createUsersWithMessages = async () => {
         username: 'vsprakash2003',
         email: 'hello@prakash.com',
         password: 'hello',
+        role: 'ADMIN',
         messages: [
             {
             text: 'Check my git repositories',
