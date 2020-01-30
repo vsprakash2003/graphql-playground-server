@@ -63,6 +63,10 @@ the above command might throw an error if the DB was already initialized.
 `psql graphqlplaground`
 `\du`
 
+### check list of tables
+`psql graphqlplaground`
+`\dt`
+
 ### check tables after npm start
 `psql graphqlplaground`
 `select * from users;`
